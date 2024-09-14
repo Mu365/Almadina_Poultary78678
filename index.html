@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almadina Poultry Contacts List</title>
+    <link rel="stylesheet" href="Second.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Almadina Poultry Contacts List</h1>
+
+        <!-- Contact Entry Section -->
+        <section>
+            <h2>Enter New Contact</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required><br>
+
+                <label for="category">Select Category:</label>
+                <select id="category" name="category">
+                    <option value="Executive Contacts">Executive Contacts</option>
+                    <option value="Employee Contacts">Employee Contacts</option>
+                    <option value="Shop Keepers Contacts">Shop Keepers Contacts</option>
+                    <option value="Drivers Contacts">Drivers Contacts</option> <!-- New Category -->
+                </select><br>
+
+                <!-- Sub-category for Shop Keepers -->
+                <label for="subcategory">Select Subcategory (Only for Shop Keepers):</label>
+                <select id="subcategory" name="subcategory" disabled>
+                    <option value="Dera Shop Keepers Contact">Dera Shop Keepers Contact</option>
+                    <option value="Chakok Contacts">Chakok Contacts</option>
+                    <option value="Local Contacts">Local Contacts</option>
+                </select><br>
+
+                <button type="submit">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5651/5651414.png" alt="Submit Icon" width="16"> Submit Contact
+                </button>
+            </form>
+        </section>
+
+        <!-- View Contacts Section -->
+        <section>
+            <h2>View Contacts</h2>
+            <button onclick="viewContacts('Executive Contacts')">Executive Contacts</button>
+            <button onclick="viewContacts('Employee Contacts')">Employee Contacts</button>
+            <button onclick="viewContacts('Shop Keepers Contacts')">Shop Keepers Contacts</button>
+            <button onclick="viewContacts('Drivers Contacts')">Drivers Contacts</button>
+
+            <!-- Subcategories -->
+            <div id="shopkeeper-options">
+                <button onclick="viewContacts('Dera Shop Keepers Contact')">Dera Shop Keepers Contact</button>
+                <button onclick="viewContacts('Chakok Contacts')">Chakok Contacts</button>
+                <button onclick="viewContacts('Local Contacts')">Local Contacts</button>
+            </div>
+
+            <div id="contact-list"></div>
+        </section>
+    </div>
+
+    <script src="Third.js"></script>
+</body>
+</html>
